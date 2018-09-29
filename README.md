@@ -39,6 +39,12 @@ int main(){
     
     auto truth = Matrix<T>(OUTPUT_SIZE, 1, 0);
     truth(2, 0) = 1;
+    
+    // displaying the matrices
+    x.print();
+    std::cout << std::endl;
+    truth.print();
+    std::cout << std::endl;
 
     // creating a 3-layer (1 hidden) network with ReLU activation, using a softmax layer and cross-entropy loss
     // 4 input neurons, 5 hidden neurons, and 3 output neurons
