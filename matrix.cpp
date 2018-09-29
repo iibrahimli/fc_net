@@ -1,3 +1,7 @@
+//
+// Created by Imran on 05-Sep-18.
+//
+
 #ifndef MATRIX_CPP
 #define MATRIX_CPP
 
@@ -49,12 +53,13 @@ Matrix<E>& Matrix<E>::hadamard(const Matrix<E>& m){
 }
 
 template<typename E>
-Matrix<E> Matrix<E>::transpose(){
-    Matrix t(rows, cols);
-    t.cols = cols;
-    t.rows = rows;
+Matrix<E> Matrix<E>::T() const{
+    Matrix t(cols, rows);
+    t.cols = rows;
+    t.rows = cols;
     for(int i=0; i<rows; i++){
-        for(int j=0; j<cols; j++) t.mat[j*cols+i] = mat[i*cols+j];
+        for(int j=0; j<cols; j++)
+            t.mat[i*cols+j] = mat[j*rows+i];
     }
     return t;
 }
@@ -72,6 +77,12 @@ void Matrix<E>::print() const {
             std::cout << std::right << std::setw(10) << mat[i*cols+j] << " ";
         std::cout << "|" << std::endl;
     }
+}
+
+template<typename E>
+std::string Matrix<E>::shape() const {
+    std::string shape = "(" + std::to_string(rows) + ", " + std::to_string(cols) + ")";
+    return shape;
 }
 
 template<typename E>

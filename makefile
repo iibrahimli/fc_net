@@ -2,7 +2,7 @@ TARGET = test
 DEPS   = $(wildcard *.hpp)
 SRC    = $(wildcard *.cpp)
 OBJ    = $(SRC:.cpp=.o)
-FLAGS  = -g -Wall -O3 -std=c++11
+FLAGS  = -g -Wall -O3 -std=c++17
 
 $(TARGET): $(OBJ)
 	g++ $(FLAGS) $^ -o $@
