@@ -1,4 +1,4 @@
-# goofiNN-around
+# basic-nets
 
 A basic C++ deep learning library that I wrote as a side project, and to make sure I understand how simple NNs work. Currently supports only fully-connected feedforward neural networks (`Net` class).
 
